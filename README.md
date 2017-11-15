@@ -11,3 +11,6 @@ Ignoring Capitalization
 Punctuation
 Hyphens and Apostrophes
 In chinese/japanese, it’s necessary to employ a word segmentation algorithm specific to that language
+## Spelling Correction:
+## Stemming and Lemmatization
+## Query Rewriting (to increase both precision and recall):
