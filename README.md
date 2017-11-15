@@ -15,15 +15,13 @@ In chinese/japanese, it’s necessary to employ a word segmentation algorithm sp
 ## Stemming and Lemmatization
 ## Query Rewriting (to increase both precision and recall):
 1. Query expansion (increases recall) by expanding the query with its
-
-⋅⋅* Abbreviations
+⋅⋅*. Abbreviations
 Using a Dictionary	
 supervised machine learning, we train a model using examples of abbreviations in context (e.g., the sequence of surrounding words). How to get training data:
 Manually (expensive)
 automatically identify potential abbreviations using patterns (parentheses, first letter of word and abbreviation). Pattern matching won’t catch all abbreviations, and it will also encounter false positives.
 unsupervised machine learning using both surface similarity (matching first letter, etc) and  semantic similarity (e.g. word2vec)
-
-⋅⋅* Synonyms
+⋅⋅*. Synonyms
 Similar to abbreviations, we can use dictionary, supervised and unsupervised learning. The difference is we can’t use surface similarity (like abbreviations) and we can only rely on semantic similarity; so we can encounter false positives. So if we’re using Word2vec, we can require minimum cosine similarity.
 ⋅⋅* Stemming 
 ⋅⋅* spelling correction
