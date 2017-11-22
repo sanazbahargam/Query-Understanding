@@ -52,4 +52,20 @@ We can apply a discount to matches from query expansion (by a constant, etc) or 
       * The partial query may not be a prefix, for example, we shouldn’t assume Pr(mens pants|pa)=0 just because pa isn’t a prefix of mens pants
       * The partial query may be misspelled
       * You may want to exclude autocomplete suggestions from the logs when computing query probabilities, in order to avoid a positive feedback loop.
+9. Instant Search
+Instant search goes a step beyond autocomplete: instead of suggesting search queries, it shows searchers actual search results     * as they type.
 
+***
+
+# Contextual Query Understanding
+1. Session Context
+    * Recognizing Query Refinement
+      * When a searcher performs two searches in a row, it’s often the case that the second search is an attempt to refine the first.
+      * Narrowing: e.g., iphone games -> free iphone games. (improves precision)
+      * Broadening: e.g., iphone kids games -> iphone games (improves recall)
+      * Lateral refinement, e.g., iphone games -> android games.
+    * Personalization using Session Context
+2. Location as Context
+    * Location as an Implicit Part of the Query
+    * Location as an Intent Signal	
+3. Seasonality
