@@ -36,4 +36,11 @@ We can apply a discount to matches from query expansion (by a constant, etc) or 
 3. Query Segmentation:
 4. Query scoping (increase precision): Query scoping is a powerful technique to increase precision by leveraging the explicit structure of the corpus and the implicit structure of queries
     * Query Tagging, query tagging is a special case of named-entity recognition (NER)
+5. NER (at high level distinguish between named entities and terms (no name or type).)
+    * Rule-based recognizers (low accuracy)
+    * Machine-learned (requires a collection of segmented, labeled queries
+6. Taxonomies 
+    * A taxonomy is a hierarchical classification system: a tree that starts from a universal root concept and progressively divides it into more specific child concepts. 
+7. Ontologies
+    * While taxonomies represent a collection of topics with “is-a” relationships, ontologies make it possible to express a much richer collection of objects and relationships, such as “has-a” and “use-a”. 
 
