@@ -44,7 +44,7 @@ We can apply a discount to matches from query expansion (by a constant, etc) or 
 7. Ontologies
     * While taxonomies represent a collection of topics with “is-a” relationships, ontologies make it possible to express a much richer collection of objects and relationships, such as “has-a” and “use-a”. 
 8. Autocomplete
-    * Autocomplete predicts complete search queries from partial ones. We can model this process using conditional probability. 
+    * Autocomplete predicts complete search queries from partial ones. It’s a way to guide searchers to successful search experiences. We can model this process using conditional probability. 
     * We can use historical query logs to compute the probability of a query based on how frequently it appears in the log. 
     * Drawbacks:
       * However query frequency in the logs doesn’t take into account recency, seasonality, or other time-dependent factors. 
