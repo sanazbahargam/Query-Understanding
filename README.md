@@ -47,9 +47,9 @@ We can apply a discount to matches from query expansion (by a constant, etc) or 
     * Autocomplete predicts complete search queries from partial ones. We can model this process using conditional probability. 
     * We can use historical query logs to compute the probability of a query based on how frequently it appears in the log. 
     * Drawbacks:
-     * However query frequency in the logs doesn’t take into account recency, seasonality, or other time-dependent factors. 
-     * Also, e also non-temporal factors: we may want to build a regression model using features like location, gender, session context, etc
-     * The partial query may not be a prefix, for example, we shouldn’t assume Pr(mens pants|pa)=0 just because pa isn’t a prefix of mens pants
-     * The partial query may be misspelled
-     * You may want to exclude autocomplete suggestions from the logs when computing query probabilities, in order to avoid a positive feedback loop.
+          * However query frequency in the logs doesn’t take into account recency, seasonality, or other time-dependent factors. 
+          * Also, e also non-temporal factors: we may want to build a regression model using features like location, gender, session context, etc
+          * The partial query may not be a prefix, for example, we shouldn’t assume Pr(mens pants|pa)=0 just because pa isn’t a prefix of mens pants
+          * The partial query may be misspelled
+          * You may want to exclude autocomplete suggestions from the logs when computing query probabilities, in order to avoid a positive feedback loop.
 
