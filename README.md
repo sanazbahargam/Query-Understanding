@@ -66,6 +66,15 @@ Instant search goes a step beyond autocomplete: instead of suggesting search que
       * Lateral refinement, e.g., iphone games -> android games.
     * Personalization using Session Context
 2. Location as Context
-    * Location as an Implicit Part of the Query
+
+    * Location as an Implicit Part of the Query, the search engine has to determine which queries have local intent (application like Google or Apple Maps, or business directory like Yelp, then nearly all queries carry local intent)
+      * E.g. search for restaurants
     * Location as an Intent Signal	
+      * Sometime location isn’t part of the query intent, but it’s still useful as a signal. For example, football means something different in the United States than it does in the rest of the English-speaking world. People searching for jackets are likely to have preferences that reflect local climate.
+    * To locate a document:
+      * Using entity recognition to find locations in the form of addresses or location names
+      * Using the locations of searchers engaging with a document to locate that document (There are various ways to geolocate searchers, the simplest being to use their IP addresses).
+	
 3. Seasonality
+    * Whether it’s the time of year or the time of day, the time when someone performs a search sometimes help us determine the searcher’s intent.  Certain queries are more frequent at particular times of year, Sometimes, it’s not the query probability but the intent that is time-sensitive (searching for jacket).  When queries exhibit seasonality, temporal context helps us better estimate their probability — which is particularly useful for autocomplete. 
+    * How do we determine that a query is seasonal? For frequent queries, we can measure the variance of when queries occur over time and compare it to that of queries performed throughout the year. The variance of a random variable with uniform distribution between the real values a and b is 1/12 (b-a)².  In general, the variance correlates negatively to seasonality.
