@@ -1,7 +1,7 @@
 # Query-Understanding
 
 ## Language identification:
-Applying Monte Carlo Techniques to Language Identification paper a wide variety of language identification algorithms perform poorly for inputs of fewer than 50 characters (query size usually less than 50).
+Applying Monte Carlo Techniques to Language Identification paper a wide variety of language identification algorithms perform poorly for inputs of fewer than 50 characters (query size usually less than 50 characters).
 We can use query features, document features, and the searcher’s country in ML model. 
 ## Character Filtering:
   * Unicode Normalization
