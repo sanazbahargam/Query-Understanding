@@ -19,7 +19,16 @@ and Applications
 ## Spelling Correction:
   * Fraction of misspelled search queries ~ 10% to 15%
   * [How to Write a Spelling Corrector](http://norvig.com/spell-correct.html)
+  * Offline:
+    * Indexing Tokens (mapping substrings of tokens (character n-grams) to tokens)
+    * Building a language model (that tells us a priori probability of a query)
+    * Building an Error Model (that tells us the probability of a query string given the intended query, in antoher word  estimates the probability of a particular misspelling, given an intended query.)
+  * At query time:
+    * Candidate generation (e.g. retrieval all tokens within an edit distance of 1 of the misspelled query)
+    * Scoring (Prob (candidate | query) ∝ Prob (query | candidate) * Prob (candidate))
+    * Presenting suggestions
 ## Stemming and Lemmatization
+  * To increase recall
 ## Query Rewriting (to increase both precision and recall):
 1. Query expansion (increases recall) by expanding the query with its
     * Abbreviations
