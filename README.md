@@ -12,10 +12,13 @@ and Applications
   * Removing Accents
   * Ignoring Capitalization
 ## Tokenization:
+  * White space characters
   * Punctuation
   * Hyphens and Apostrophes
-  * In chinese/japanese, it’s necessary to employ a word segmentation algorithm specific to that language
+  * In chinese/japanese, it’s necessary to employ a word segmentation algorithm specific to that language.
 ## Spelling Correction:
+  * Fraction of misspelled search queries ~ 10% to 15%
+  * [How to Write a Spelling Corrector](http://norvig.com/spell-correct.html)
 ## Stemming and Lemmatization
 ## Query Rewriting (to increase both precision and recall):
 1. Query expansion (increases recall) by expanding the query with its
