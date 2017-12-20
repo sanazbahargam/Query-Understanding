@@ -49,12 +49,12 @@ Similar to abbreviations, we can use dictionary, supervised and unsupervised lea
     * Specificity
       * Inverse Document Frequency: (should take care of edge cases like proper names or misspelled words)
       * Lexical Databases (knowledge graph e.g. [WordNet](https://en.wikipedia.org/wiki/WordNet): useful for comparing tokens with a hierarchical relationship
-    * syntactic analysis: using part-of-speech tagger to preserves the head noun and removes one or more of its modifiers
-    * semantic analysis: We can use the Word2vec model to embed words and phrases into a vector space that captures their semantics. This embedding allows us to recognize how much the query tokens overlap with one another in meaning, which in turn helps us estimate the consequence of ignoring a token.
+    * syntactic analysis: To determine which tokens are optional e.g. using part-of-speech tagger to preserves the head noun and removes one or more of its modifiers. Cute fluffly cat -> fluffy cat
+    * semantic analysis: We can use the Word2vec model to embed words and phrases into a vector space that captures their semantics. This embedding allows us to recognize how much the query tokens overlap with one another in meaning, which in turn helps us estimate the consequence of ignoring a token.  For example "polo shirt" -> "polo" is  but "dress shirt" -> "shirt" completely changes the query.
 3. Query Segmentation (increase precision): divides the search query into a sequence of semantic units, e.g. “machine learning” framework. Then we can auto-phrase segments or couple auto-phrasing with query expansion approaches like stemming, lemmatization, and synonym expansion. Finally, if we’re using query relaxation, it’s important for relaxation to respect query segmentation by not breaking up segments. We can do Query Segmentation by using:
-  * Dictionary Approach
-  * Statistical Approach:  create a dictionary from a document corpus. We analyze the corpus to find collocations and kepp the sequences that co-occur more than expected. 
-  * Supervised Machine Learning: a binary classification problem at the token level to decide whether it continues the current segment or begins a new one (represent the examples as feature vectors including token frequencies, mutual information for bigrams, part-of-speech tags, etc.)
+    *  Dictionary Approach
+    * Statistical Approach:  create a dictionary from a document corpus. We analyze the corpus to find collocations and kepp the sequences that co-occur more than expected. 
+    * Supervised Machine Learning: a binary classification problem at the token level to decide whether it continues the current segment or begins a new one (represent the examples as feature vectors including token frequencies, mutual information for bigrams, part-of-speech tags, etc.)
 4. Query scoping (increase precision): Query scoping is a powerful technique to increase precision by leveraging the explicit structure of the corpus and the implicit structure of queries. Query scoping often relies on query segmentation. We determine an entity type for each query segment, and then restrict matches based on an association between entity types and document fields. e.g. black (color) michael kors (brand) dress (category)
     * Query Tagging, query tagging is a special case of named-entity recognition (NER)
 5. NER (at high level distinguish between named entities and terms (no name or type) and also classify named entities in text into pre-defined categories such as the names of persons, organizations, locations, etc)
@@ -84,7 +84,7 @@ Instant search goes a step beyond autocomplete: instead of suggesting search que
       * Narrowing: e.g., iphone games -> free iphone games. (improves precision)
       * Broadening: e.g., iphone kids games -> iphone games (improves recall)
       * Lateral refinement, e.g., iphone games -> android games.
-    * Personalization using Session Context
+    * Personalization using Session Context: if searching for shirts, pants, socks in the same seesion, search engine should preserve attributes like gender and size. 
 2. Location as Context
 
     * Location as an Implicit Part of the Query, the search engine has to determine which queries have local intent (application like Google or Apple Maps, or business directory like Yelp, then nearly all queries carry local intent)
