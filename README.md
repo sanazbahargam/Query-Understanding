@@ -42,14 +42,16 @@ Similar to abbreviations, we can use dictionary, supervised and unsupervised lea
     * spelling correction
     * Scoring function: 
      Query expansion uses query rewriting to increase the number of search results. Now we need to design the scoring function to rank results that match because of query expansion. 
-     We can treat them equally (ok for abbreviations not for synonyms). 
-     We can apply a discount to matches from query expansion (by a constant, etc) or reflect the expected change in meaning (e.g. a function of cosine similarity).
+      * We can treat them equally (ok for abbreviations not for synonyms). 
+      * We can apply a discount to matches from query expansion (by a constant, etc) or reflect the expected change in meaning (e.g. a function of cosine similarity).
 2. Query relaxation (increases recall) opposite of query expansion. We can replace the query with a simpler form (removing adjectives, etc).
     * stop words
     * Specificity
-    * syntactic analysis
-    * semantic analysis
-3. Query Segmentation:
+      * Inverse Document Frequency: (should take care of edge cases like proper names or misspelled words)
+      * Lexical Databases (knowledge graph e.g. [WordNet](https://en.wikipedia.org/wiki/WordNet): useful for comparing tokens with a hierarchical relationship
+      * syntactic analysis: using part-of-speech tagger to preserves the head noun and removes one or more of its modifiers
+      * semantic analysis: We can use the Word2vec model to embed words and phrases into a vector space that captures their semantics. This embedding allows us to recognize how much the query tokens overlap with one another in meaning, which in turn helps us estimate the consequence of ignoring a token.
+3. Query Segmentation (increase precision):
 4. Query scoping (increase precision): Query scoping is a powerful technique to increase precision by leveraging the explicit structure of the corpus and the implicit structure of queries. Query scoping often relies on query segmentation. We determine an entity type for each query segment, and then restrict matches based on an association between entity types and document fields.
     * Query Tagging, query tagging is a special case of named-entity recognition (NER)
 5. NER (at high level distinguish between named entities and terms (no name or type).)
