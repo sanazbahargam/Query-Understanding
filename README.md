@@ -50,6 +50,7 @@ Similar to abbreviations, we can use dictionary, supervised and unsupervised lea
       * [Statistical Machine Translation for Query Expansion in Answer Retrieval](https://research.google.com/pubs/pub32707.html)      
       * [Synonym-based Query Expansion and Boosting-based Re-ranking:
 A Two-phase Approach for Genomic Information Retrieval](http://www.cs.sfu.ca/~anoop/papers/pdf/trec2005_report.pdf) 
+      * [Concept-Based Interactive Query Expansion](https://dl.acm.org/citation.cfm?id=1099726)
 2. Query relaxation (increases recall) opposite of query expansion. We can replace the query with a simpler form (removing adjectives, etc).
     * stop words
     * Specificity
