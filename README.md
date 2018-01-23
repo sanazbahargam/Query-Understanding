@@ -44,6 +44,12 @@ Similar to abbreviations, we can use dictionary, supervised and unsupervised lea
      Query expansion uses query rewriting to increase the number of search results. Now we need to design the scoring function to rank results that match because of query expansion. 
       * We can treat them equally (ok for abbreviations not for synonyms). 
       * We can apply a discount to matches from query expansion (by a constant, etc) or reflect the expected change in meaning (e.g. a function of cosine similarity).
+    * Papers:
+      * [Machine Translation for Query Expansion, Google patent](http://appft1.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&Sect2=HITOFF&u=%2Fnetahtml%2FPTO%2Fsearch-adv.html&r=1&p=1&f=G&l=50&d=PG01&S1=20080319962.PGNR.&OS=DN/20080319962&RS=DN/20080319962) 
+      * [Translating Queries into Snippets for Improved Query Expansion](https://dl.acm.org/citation.cfm?id=1599174) 
+      * [Statistical Machine Translation for Query Expansion in Answer Retrieval](https://research.google.com/pubs/pub32707.html)      
+      * [Synonym-based Query Expansion and Boosting-based Re-ranking:
+A Two-phase Approach for Genomic Information Retrieval](http://www.cs.sfu.ca/~anoop/papers/pdf/trec2005_report.pdf) 
 2. Query relaxation (increases recall) opposite of query expansion. We can replace the query with a simpler form (removing adjectives, etc).
     * stop words
     * Specificity
