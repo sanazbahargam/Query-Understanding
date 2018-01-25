@@ -30,7 +30,7 @@ and Applications
 ## Stemming and Lemmatization
   * To increase recall
 ## Query Rewriting (to increase both precision and recall):
-1. Query expansion (increases recall) by expanding the query with its
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 1. Query expansion (increases recall) by expanding the query with its
     * Abbreviations
 Using a Dictionary or using a supervised machine learning. In case of using a mahcine learning approach, we train a model using examples of abbreviations in context (e.g., the sequence of surrounding words). How to get training data:
       * Manually (expensive)
@@ -51,26 +51,26 @@ Similar to abbreviations, we can use dictionary, supervised and unsupervised lea
       * [Synonym-based Query Expansion and Boosting-based Re-ranking:
 A Two-phase Approach for Genomic Information Retrieval](http://www.cs.sfu.ca/~anoop/papers/pdf/trec2005_report.pdf) 
       * [Concept-Based Interactive Query Expansion](https://dl.acm.org/citation.cfm?id=1099726)
-2. Query relaxation (increases recall) opposite of query expansion. We can replace the query with a simpler form (removing adjectives, etc).
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 2. Query relaxation (increases recall) opposite of query expansion. We can replace the query with a simpler form (removing adjectives, etc).
     * stop words
     * Specificity
       * Inverse Document Frequency: (should take care of edge cases like proper names or misspelled words)
       * Lexical Databases (knowledge graph e.g. [WordNet](https://en.wikipedia.org/wiki/WordNet): useful for comparing tokens with a hierarchical relationship
     * syntactic analysis: To determine which tokens are optional e.g. using part-of-speech tagger to preserves the head noun and removes one or more of its modifiers. Cute fluffly cat -> fluffy cat
     * semantic analysis: We can use the Word2vec model to embed words and phrases into a vector space that captures their semantics. This embedding allows us to recognize how much the query tokens overlap with one another in meaning, which in turn helps us estimate the consequence of ignoring a token.  For example "polo shirt" -> "polo" is  but "dress shirt" -> "shirt" completely changes the query.
-3. Query Segmentation (increase precision): divides the search query into a sequence of semantic units, e.g. “machine learning” framework. Then we can auto-phrase segments or couple auto-phrasing with query expansion approaches like stemming, lemmatization, and synonym expansion. Finally, if we’re using query relaxation, it’s important for relaxation to respect query segmentation by not breaking up segments. We can do Query Segmentation by using:
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 3. Query Segmentation (increase precision): divides the search query into a sequence of semantic units, e.g. “machine learning” framework. Then we can auto-phrase segments or couple auto-phrasing with query expansion approaches like stemming, lemmatization, and synonym expansion. Finally, if we’re using query relaxation, it’s important for relaxation to respect query segmentation by not breaking up segments. We can do Query Segmentation by using:
     *  Dictionary Approach
     * Statistical Approach:  create a dictionary from a document corpus. We analyze the corpus to find collocations and kepp the sequences that co-occur more than expected. 
     * Supervised Machine Learning: a binary classification problem at the token level to decide whether it continues the current segment or begins a new one (represent the examples as feature vectors including token frequencies, mutual information for bigrams, part-of-speech tags, etc.)
-4. Query scoping (increase precision): Query scoping is a powerful technique to increase precision by leveraging the explicit structure of the corpus and the implicit structure of queries. Query scoping often relies on query segmentation. We determine an entity type for each query segment, and then restrict matches based on an association between entity types and document fields. e.g. black (color) michael kors (brand) dress (category)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 4. Query scoping (increase precision): Query scoping is a powerful technique to increase precision by leveraging the explicit structure of the corpus and the implicit structure of queries. Query scoping often relies on query segmentation. We determine an entity type for each query segment, and then restrict matches based on an association between entity types and document fields. e.g. black (color) michael kors (brand) dress (category)
     * Query Tagging, query tagging is a special case of named-entity recognition (NER)
-5. NER (at high level distinguish between named entities and terms (no name or type) and also classify named entities in text into pre-defined categories such as the names of persons, organizations, locations, etc)
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 5. NER (at high level distinguish between named entities and terms (no name or type) and also classify named entities in text into pre-defined categories such as the names of persons, organizations, locations, etc)
     * Rule-based recognizers (low accuracy)
     * Machine-learned, mainly LSTM (requires a collection of segmented, labeled queries) 
-6. Taxonomies and Ontologies: We can implement query understanding by mapping queries to taxonomies or ontologies. The simplest approach is to treat taxonomy nodes as categories and train a classifier to map queries to categories, e.g., mapping the query knapsack to the node Bags and Purses -> Backpacks.
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 6. Taxonomies and Ontologies: We can implement query understanding by mapping queries to taxonomies or ontologies. The simplest approach is to treat taxonomy nodes as categories and train a classifier to map queries to categories, e.g., mapping the query knapsack to the node Bags and Purses -> Backpacks.
     * A taxonomy is a hierarchical classification system: a tree that starts from a universal root concept and progressively divides it into more specific child concepts. 
     * While taxonomies represent a collection of topics with “is-a” relationships, ontologies make it possible to express a much richer collection of objects and relationships, such as “has-a” and “use-a”. 
-8. Autocomplete
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 8. Autocomplete
     * Autocomplete predicts complete search queries from partial ones. It’s a way to guide searchers to successful search experiences. We can model this process using conditional probability. 
     * We can use historical query logs to compute the probability of a query based on how frequently it appears in the log. 
     * Drawbacks:
@@ -79,7 +79,9 @@ A Two-phase Approach for Genomic Information Retrieval](http://www.cs.sfu.ca/~an
       * The partial query may not be a prefix, for example, we shouldn’t assume Pr(mens pants|pa)=0 just because pa isn’t a prefix of mens pants
       * The partial query may be misspelled, so it’s necessary to combine autocomplete with spelling correction
       * You may want to exclude autocomplete suggestions from the logs when computing query probabilities, in order to avoid a positive feedback loop.
-9. Instant Search
+    * Papers:
+      * [A Survey of Query Auto Completion in Information Retrieval](https://staff.fnwi.uva.nl/m.derijke/wp-content/papercite-data/pdf/cai-survey-2016.pdf)	
+![#c5f015](https://placehold.it/15/c5f015/000000?text=+) 9. Instant Search
 Instant search goes a step beyond autocomplete: instead of suggesting search queries, it shows searchers actual search results     * as they type.
 
 ***
