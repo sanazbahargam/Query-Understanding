@@ -80,7 +80,8 @@ A Two-phase Approach for Genomic Information Retrieval](http://www.cs.sfu.ca/~an
       * The partial query may be misspelled, so it’s necessary to combine autocomplete with spelling correction
       * You may want to exclude autocomplete suggestions from the logs when computing query probabilities, in order to avoid a positive feedback loop.
     * Papers:
-      * [A Survey of Query Auto Completion in Information Retrieval](https://staff.fnwi.uva.nl/m.derijke/wp-content/papercite-data/pdf/cai-survey-2016.pdf)	
+      * [A Survey of Query Auto Completion in Information Retrieval](https://staff.fnwi.uva.nl/m.derijke/wp-content/papercite-data/pdf/cai-survey-2016.pdf)
+      * https://www.slideshare.net/GaneshVenkataraman3/instant-search-a-handson-tutorial
 9. Instant Search
 Instant search goes a step beyond autocomplete: instead of suggesting search queries, it shows searchers actual search results     * as they type.
 
