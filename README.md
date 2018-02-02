@@ -70,7 +70,7 @@ A Two-phase Approach for Genomic Information Retrieval](http://www.cs.sfu.ca/~an
 6. Taxonomies and Ontologies: We can implement query understanding by mapping queries to taxonomies or ontologies. The simplest approach is to treat taxonomy nodes as categories and train a classifier to map queries to categories, e.g., mapping the query knapsack to the node Bags and Purses -> Backpacks.
     * A taxonomy is a hierarchical classification system: a tree that starts from a universal root concept and progressively divides it into more specific child concepts. 
     * While taxonomies represent a collection of topics with “is-a” relationships, ontologies make it possible to express a much richer collection of objects and relationships, such as “has-a” and “use-a”. 
-8. Autocomplete
+8. Autocomplete/Autosuggest
     * Autocomplete predicts complete search queries from partial ones. It’s a way to guide searchers to successful search experiences. We can model this process using conditional probability. 
     * We can use historical query logs to compute the probability of a query based on how frequently it appears in the log. 
     * Drawbacks:
@@ -79,6 +79,10 @@ A Two-phase Approach for Genomic Information Retrieval](http://www.cs.sfu.ca/~an
       * The partial query may not be a prefix, for example, we shouldn’t assume Pr(mens pants|pa)=0 just because pa isn’t a prefix of mens pants
       * The partial query may be misspelled, so it’s necessary to combine autocomplete with spelling correction
       * You may want to exclude autocomplete suggestions from the logs when computing query probabilities, in order to avoid a positive feedback loop.
+    * Metrics to evaluate:
+      * [Mean Reciprocal Rank (MRR)] (https://en.wikipedia.org/wiki/Mean_reciprocal_rank) 
+      * Acceptance Rate: the percentage of searches that come from autosuggest
+      * Average Keystrokes (or Average Prefix Length)
     * Papers:
       * [A Survey of Query Auto Completion in Information Retrieval](https://staff.fnwi.uva.nl/m.derijke/wp-content/papercite-data/pdf/cai-survey-2016.pdf)
       * https://www.slideshare.net/GaneshVenkataraman3/instant-search-a-handson-tutorial
@@ -108,3 +112,9 @@ Instant search goes a step beyond autocomplete: instead of suggesting search que
 3. Seasonality
     * Whether it’s the time of year or the time of day, the time when someone performs a search sometimes help us determine the searcher’s intent.  Certain queries are more frequent at particular times of year, Sometimes, it’s not the query probability but the intent that is time-sensitive (searching for jacket).  When queries exhibit seasonality, temporal context helps us better estimate their probability — which is particularly useful for autocomplete. 
     * How do we determine that a query is seasonal? For frequent queries, we can measure the variance of when queries occur over time and compare it to that of queries performed throughout the year. The variance of a random variable with uniform distribution between the real values a and b is 1/12 (b-a)².  In general, the variance correlates negatively to seasonality.
+    
+    
+References:
+    * [Query Understanding] (https://queryunderstanding.com/)
+    * [Bootstrapping Autosuggest] (https://medium.com/related-works-inc/bootstrapping-autosuggest-c1ca3edaf1eb)
+    * 
