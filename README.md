@@ -115,6 +115,6 @@ Instant search goes a step beyond autocomplete: instead of suggesting search que
     
     
 References:
-    * [Query Understanding] (https://queryunderstanding.com/)
-    * [Bootstrapping Autosuggest] (https://medium.com/related-works-inc/bootstrapping-autosuggest-c1ca3edaf1eb)
-    * 
+  * [Query Understanding] (https://queryunderstanding.com/)
+  * [Bootstrapping Autosuggest] (https://medium.com/related-works-inc/bootstrapping-autosuggest-c1ca3edaf1eb)
+
