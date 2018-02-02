@@ -80,7 +80,7 @@ A Two-phase Approach for Genomic Information Retrieval](http://www.cs.sfu.ca/~an
       * The partial query may be misspelled, so it’s necessary to combine autocomplete with spelling correction
       * You may want to exclude autocomplete suggestions from the logs when computing query probabilities, in order to avoid a positive feedback loop.
     * Metrics to evaluate:
-      * [Mean Reciprocal Rank (MRR)] (https://en.wikipedia.org/wiki/Mean_reciprocal_rank) 
+      * [Mean Reciprocal Rank (MRR)](https://en.wikipedia.org/wiki/Mean_reciprocal_rank) 
       * Acceptance Rate: the percentage of searches that come from autosuggest
       * Average Keystrokes (or Average Prefix Length)
     * Papers:
@@ -115,6 +115,6 @@ Instant search goes a step beyond autocomplete: instead of suggesting search que
     
     
 References:
-  * [Query Understanding] (https://queryunderstanding.com/)
-  * [Bootstrapping Autosuggest] (https://medium.com/related-works-inc/bootstrapping-autosuggest-c1ca3edaf1eb)
+  * [Query Understanding](https://queryunderstanding.com/)
+  * [Bootstrapping Autosuggest](https://medium.com/related-works-inc/bootstrapping-autosuggest-c1ca3edaf1eb)
 
