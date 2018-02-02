@@ -114,7 +114,7 @@ Instant search goes a step beyond autocomplete: instead of suggesting search que
     * How do we determine that a query is seasonal? For frequent queries, we can measure the variance of when queries occur over time and compare it to that of queries performed throughout the year. The variance of a random variable with uniform distribution between the real values a and b is 1/12 (b-a)².  In general, the variance correlates negatively to seasonality.
     
     
-References:
+## References:
   * [Query Understanding](https://queryunderstanding.com/)
   * [Bootstrapping Autosuggest](https://medium.com/related-works-inc/bootstrapping-autosuggest-c1ca3edaf1eb)
 
